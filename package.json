@@ -1,0 +1,43 @@
+{
+  "name": "fundamental-analysis-research-assistant",
+  "version": "1.0.0",
+  "description": "A single page application that allows for a user to create an account and the search across multiple security exchanges to research balance sheet, growth rates etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ledan-bot/FARA.git"
+  },
+  "author": "Nick Ledan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ledan-bot/FARA/issues"
+  },
+  "homepage": "https://github.com/Ledan-bot/FARA#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chart.js": "^3.5.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.6",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
