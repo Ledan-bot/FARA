@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Compiled files/Dirs
+bundle.js
+
+#configuration files
+config.js

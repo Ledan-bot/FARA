@@ -4,7 +4,9 @@
   "description": "A single page application that allows for a user to create an account and the search across multiple security exchanges to research balance sheet, growth rates etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/index.js",
+    "react-dev": "webpack -w"
   },
   "repository": {
     "type": "git",
