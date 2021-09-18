@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const database = require('../database/index.js');
-const { User } = database.models
+// const { User } = database.models
 // --------------------END OF IMPORTS ---------------------------------
 
 const app = express();
