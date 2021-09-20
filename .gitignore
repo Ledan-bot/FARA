@@ -105,6 +105,7 @@ dist
 
 #Compiled files/Dirs
 bundle.js
+main.css
 
 #configuration files
 config.js
