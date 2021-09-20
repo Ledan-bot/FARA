@@ -1,7 +1,7 @@
 
 # Fundamental Analysis Research Assistant
 
-This application is meant to be used for research (Fundamental Analysis) on large cororate entities in regards to balance sheets information, cash flow etc.
+This application is meant to be used for research (Fundamental Analysis) on large cororate entities in regards to balance sheet information, cash flow etc.
 
 
 ## Authors
