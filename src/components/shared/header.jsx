@@ -14,7 +14,6 @@ export default function Header() {
             <AiOutlineBars />
           </div>
         </IconContext.Provider>
-
       </header>
     </>
   )
