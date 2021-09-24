@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Header from './components/shared/header.jsx'
 
 
 export default function App() {
 
   return (
-    <h1 className="bg-gray-700">SUP WORLD</h1>
+    <>
+      <Header />
+    </>
   )
 }
