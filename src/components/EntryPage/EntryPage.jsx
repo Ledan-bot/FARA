@@ -14,8 +14,8 @@ export default function EntryPage() {
           <section id="Login" className="m-4 bg-blue-700 border-2 border-solid border-blue-800 border-opacity-70 rounded ">
             <LoginForm />
           </section>
-          <section id="Create-Account" className="flex flex-col justify-items-center m-4 w-80 bg-blue-700 border-2 border-solid border-blue-800 border-opacity-70 rounded ">
-            <h2 className="flex-1">Create A New Account</h2>
+          <section id="Create-Account" className="flex flex-col items-center m-4 w-80 bg-blue-700 border-2 border-solid border-blue-800 border-opacity-70 rounded ">
+            <h2 className="flex-1 text-gray-300">Create A New Account</h2>
             <CreateAccount />
           </section>
         </section>

@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 export default function Header() {
   return (
     <>
-      <header className="h-10 flex flex-wrap items-center bg-blue-400 bg-opacity-70">
+      <header className="h-14 flex flex-wrap items-center bg-blue-400 bg-opacity-70">
         <div className="flex-1 pl-5">
           <h2 className="text-gray-700">Research Assistant</h2>
         </div>

@@ -29,9 +29,9 @@ export default function LoginForm() {
   return (
     <>
       <form onSubmit={loginUser}>
-        <p>Username</p>
+        <p className="text-gray-300">Username</p>
         <input type="text" placeholder="Username" onChange={e => updateLoginUsername(e.target.value)} />
-        <p>Password</p>
+        <p className="text-gray-300">Password</p>
         <input type='password' placeholder="Password" onChange={e => updateLoginPassword(e.target.value)} />
         <br/>
         <button className="m-16 bg-gray-400 border-solid border-2 border-gray-400 rounded-lg">Login</button>

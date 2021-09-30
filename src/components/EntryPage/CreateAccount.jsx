@@ -28,17 +28,17 @@ export default function CreateAccount() {
 
   return (
     <>
-      <form className="flex-1 ">
-        <p>New Username:</p>
-        <input type='text' onChange={e => updateRegisterUsername(e.target.value)}/>
-        <p>New Password:</p>
-        <input type="text" onChange={e => updateRegisterPassword(e.target.value)}/>
-        <p>First Name:</p>
-        <input type="text" onChange={e => updateFirstName(e.target.value)}/>
-        <p>Last Name:</p>
-        <input type="text" onChange={e => updateLastName(e.target.value)}/>
-        <p>Email:</p>
-        <input type="text" onChange={e => updateEmail(e.target.value)}/>
+      <form className="flex flex-col items-center w-full">
+        <p className="text-gray-300">New Username:</p>
+        <input type='text' onChange={e => updateRegisterUsername(e.target.value)} className="w-full"/>
+        <p className="text-gray-300">New Password:</p>
+        <input type="text" onChange={e => updateRegisterPassword(e.target.value)} className="w-full"/>
+        <p className="text-gray-300">First Name:</p>
+        <input type="text" onChange={e => updateFirstName(e.target.value)} className="w-full"/>
+        <p className="text-gray-300">Last Name:</p>
+        <input type="text" onChange={e => updateLastName(e.target.value)} className="w-full"/>
+        <p className="text-gray-300">Email:</p>
+        <input type="text" onChange={e => updateEmail(e.target.value)} className="w-full"/>
       </form>
     </>
   )
