@@ -5,11 +5,11 @@ import { IconContext } from 'react-icons';
 export default function Header() {
   return (
     <>
-      <header className="h-14 flex flex-wrap items-center bg-blue-400 bg-opacity-70">
+      <header className="h-14 flex flex-wrap items-center bg-indigo-800 ">
         <div className="flex-1 pl-5">
-          <h2 className="text-gray-700">Research Assistant</h2>
+          <h2 className="text-gray-300">Research Assistant</h2>
         </div>
-        <IconContext.Provider value={{ size: "40px", color: '#374151' }}>
+        <IconContext.Provider value={{ size: "40px", color: '#D1D5DB' }}>
           <div className="flex-initial justify-end pr-1">
             <AiOutlineBars />
           </div>

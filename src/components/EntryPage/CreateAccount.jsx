@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 export default function CreateAccount() {
-  const [registerUsername, updateRegisterUsername] = useState('');
-  const [registerPassword, updateRegisterPassword] = useState('');
+  const [Username, updateUsername] = useState('');
+  const [Password, updatePassword] = useState('');
   const [firstName, updateFirstName] = useState('');
   const [lastName, updateLastName] = useState('');
   const [email, updateEmail] = useState('');
@@ -13,8 +13,8 @@ export default function CreateAccount() {
     axios({
       method: 'POST',
       data: {
-        username: registerUsername,
-        password: registerPassword,
+        username: Username,
+        password: Password,
         firstName: firstName,
         lastName: lastName,
         email: email
@@ -28,17 +28,19 @@ export default function CreateAccount() {
 
   return (
     <>
-      <form className="flex flex-col items-center w-full">
+      <form className="flex flex-col items-center w-full" onSubmit={registerUser}>
         <p className="text-gray-300">New Username:</p>
-        <input type='text' onChange={e => updateRegisterUsername(e.target.value)} className="w-full"/>
+        <input type='text' onChange={e => updateRegisterUsername(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">New Password:</p>
-        <input type="text" onChange={e => updateRegisterPassword(e.target.value)} className="w-full"/>
+        <input type="text" onChange={e => updateRegisterPassword(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">First Name:</p>
-        <input type="text" onChange={e => updateFirstName(e.target.value)} className="w-full"/>
+        <input type="text" onChange={e => updateFirstName(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">Last Name:</p>
-        <input type="text" onChange={e => updateLastName(e.target.value)} className="w-full"/>
+        <input type="text" onChange={e => updateLastName(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">Email:</p>
-        <input type="text" onChange={e => updateEmail(e.target.value)} className="w-full"/>
+        <input type="text" onChange={e => updateEmail(e.target.value)} className="w-11/12"/>
+        <br></br>
+        <button type="submit" className="rounded-full py-3 px-6 bg-gray-300 hover:bg-purple-700 text-gray-900">Create Account</button>
       </form>
     </>
   )

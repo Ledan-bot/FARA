@@ -28,13 +28,13 @@ export default function LoginForm() {
 
   return (
     <>
-      <form onSubmit={loginUser}>
+      <form onSubmit={loginUser} className="flex flex-col items-center">
         <p className="text-gray-300">Username</p>
-        <input type="text" placeholder="Username" onChange={e => updateLoginUsername(e.target.value)} />
+        <input type="text" placeholder="Username" onChange={e => updateLoginUsername(e.target.value)}  className="w-11/12"/>
         <p className="text-gray-300">Password</p>
-        <input type='password' placeholder="Password" onChange={e => updateLoginPassword(e.target.value)} />
+        <input type='password' placeholder="Password" onChange={e => updateLoginPassword(e.target.value)} className="w-11/12" />
         <br/>
-        <button className="m-16 bg-gray-400 border-solid border-2 border-gray-400 rounded-lg">Login</button>
+        <button className="rounded-full py-3 px-6 bg-gray-300 hover:bg-purple-700 text-gray-800">Login</button>
       </form>
     </>
   )
