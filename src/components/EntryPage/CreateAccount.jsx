@@ -28,7 +28,7 @@ export default function CreateAccount() {
 
   return (
     <>
-      <form>
+      <form className="flex-1 ">
         <p>New Username:</p>
         <input type='text' onChange={e => updateRegisterUsername(e.target.value)}/>
         <p>New Password:</p>

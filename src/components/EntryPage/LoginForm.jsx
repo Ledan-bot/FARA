@@ -33,7 +33,8 @@ export default function LoginForm() {
         <input type="text" placeholder="Username" onChange={e => updateLoginUsername(e.target.value)} />
         <p>Password</p>
         <input type='password' placeholder="Password" onChange={e => updateLoginPassword(e.target.value)} />
-        <button>Login</button>
+        <br/>
+        <button className="m-16 bg-gray-400 border-solid border-2 border-gray-400 rounded-lg">Login</button>
       </form>
     </>
   )
