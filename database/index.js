@@ -16,8 +16,7 @@ const userSchema = new Schema({
   Information: {
     firstName: String,
     lastName: String,
-    email: String,
-    birthDate: Date
+    email: String
   }
 })
 
@@ -30,7 +29,12 @@ const findUser = async (user) => {
     if (!doc) {
       const newUser = new User({
         username: user.username,
-        password: user.password
+        password: user.password,
+        Information: {
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email
+        }
       });
       await newUser.save();
       return 'User Created'
