@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../shared/header.jsx';
-import Footer from '../shared/footer.jsx';
+import Header from '../shared/Header.jsx';
+import Footer from '../shared/Footer.jsx';
 import LoginForm from './LoginForm.jsx';
 import CreateAccount from './CreateAccount.jsx';
-
+import YahooNews from './YahooNews.jsx';
 
 export default function EntryPage() {
   return (
@@ -18,6 +18,9 @@ export default function EntryPage() {
             <h2 className="flex-1 text-gray-300">Create A New Account</h2>
             <CreateAccount />
           </section>
+        </section>
+        <section>
+          <YahooNews />
         </section>
       </main>
       <Footer />

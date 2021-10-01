@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Header from './components/Shared/header.jsx'
-import Footer from './components/Shared/footer.jsx'
+import Header from './components/Shared/Header.jsx'
+import Footer from './components/Shared/Footer.jsx'
 import EntryPage from './components/EntryPage/EntryPage.jsx'
 
 

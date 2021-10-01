@@ -1,5 +1,5 @@
 const database = require('../database/index.js');
-// const { User } = database.models
+const { User } = database.models
 const bcrypt = require('bcryptjs');
 const localStrategy = require('passport-local').Strategy;
 

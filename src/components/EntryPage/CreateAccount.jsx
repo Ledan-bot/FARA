@@ -30,9 +30,9 @@ export default function CreateAccount() {
     <>
       <form className="flex flex-col items-center w-full" onSubmit={registerUser}>
         <p className="text-gray-300">New Username:</p>
-        <input type='text' onChange={e => updateRegisterUsername(e.target.value)} className="w-11/12"/>
+        <input type='text' onChange={e => updateUsername(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">New Password:</p>
-        <input type="text" onChange={e => updateRegisterPassword(e.target.value)} className="w-11/12"/>
+        <input type="text" onChange={e => updatePassword(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">First Name:</p>
         <input type="text" onChange={e => updateFirstName(e.target.value)} className="w-11/12"/>
         <p className="text-gray-300">Last Name:</p>
