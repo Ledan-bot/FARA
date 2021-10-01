@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const database = require('../database/index.js');
 const { User } = database.models
+const { apiKey } = require('../env/config.js')
 // --------------------END OF IMPORTS ---------------------------------
 
 const PORT = process.env.PORT || 8666;
@@ -46,7 +47,7 @@ async function getYahooNews(req, res, next) {
       url: 'https://mboum-finance.p.rapidapi.com/ne/news',
       headers: {
         'x-rapidapi-host': 'mboum-finance.p.rapidapi.com',
-        'x-rapidapi-key': '9480f55c15mshd9dee802f5406c4p129102jsna119932d3d4b'
+        'x-rapidapi-key': apiKey
       }
     };
     const response = await axios.request(options)
