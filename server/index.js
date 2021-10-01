@@ -36,9 +36,28 @@ app.use(cookieParser('secretCode'));
 app.use(passport.initialize());
 app.use(passport.session());
 require('./passportConfig')(passport)
+
+function redisCache(req, res, next) {
+  const url = 'https://mboum-finance.p.rapidapi.com/ne/news'
+
+  client.get(url, (err, data) => {
+    if (err) throw err;
+    if (data !== null) {
+      let parsed = JSON.parse(data)
+      res.send(parsed)
+    } else {
+      next();
+    }
+  })
+}
 // --------------------END OF MIDDLEWARE ---------------------------------
 
 // --------------------HELPER FUNCTIONS ----------------------------------
+
+function setResponse(url, dataString) {
+
+}
+
 
 async function getYahooNews(req, res, next) {
   try {
@@ -52,8 +71,10 @@ async function getYahooNews(req, res, next) {
     };
     const response = await axios.request(options)
     const { data } = response
-    console.log(data)
-    res.send('SUP')
+    let dataString = JSON.stringify(data);
+
+    client.setex(options.url, 86400, dataString)
+    res.send(data)
   } catch (err) {
     console.error(err)
     res.sendStatus(500)
@@ -100,7 +121,7 @@ app.post('/email', (req, res) => {
   res.status(201).send('Created')
 })
 
-app.get('/yahoo/news', getYahooNews);
+app.get('/yahoo/news', redisCache, getYahooNews);
 
 // --------------------END OF ROUTES ---------------------------------
 
