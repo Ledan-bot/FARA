@@ -54,10 +54,6 @@ function redisCache(req, res, next) {
 
 // --------------------HELPER FUNCTIONS ----------------------------------
 
-function setResponse(url, dataString) {
-
-}
-
 
 async function getYahooNews(req, res, next) {
   try {
@@ -96,7 +92,7 @@ app.post('/login', (req, res, next) => {
 })
 
 app.post('/register', ({ body }, res) => {
-  const { username, password } = body
+  const { username, password, firstName, lastName, email } = body
   User.findOne({username: username}, async (err, doc) => {
     if (err) throw err;
     if (doc) res.send('User Already Exists');
@@ -104,7 +100,12 @@ app.post('/register', ({ body }, res) => {
       const hashedPassword = await bcrypt.hash(password, 10)
       const newUser = new User({
         username: username,
-        password: hashedPassword
+        password: hashedPassword,
+        Information: {
+          firstName: firstName,
+          lastName: lastName,
+          email: email
+        }
       });
       await newUser.save();
       res.send('User Created')

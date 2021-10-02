@@ -9,7 +9,7 @@ export default function EntryPage() {
   return (
     <>
       <Header />
-      <main className="h-screen">
+      <main >
         <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
           <section id="Login" className="m-4 w-60 bg-indigo-800 border-2 border-solid border-indigo-800 border-opacity-70 rounded ">
             <LoginForm />
@@ -19,7 +19,7 @@ export default function EntryPage() {
             <CreateAccount />
           </section>
         </section>
-        <section>
+        <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
           <YahooNews />
         </section>
       </main>
