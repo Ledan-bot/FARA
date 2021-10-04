@@ -29,7 +29,7 @@ export default function YahooNews() {
     let fiveArticles = newsArticles.slice(0, 5)
     console.log(fiveArticles)
     return (
-      <section className="w-80 bg-indigo-800">
+      <section className="w-96 flex flex-col items-center bg-indigo-800">
         {fiveArticles.map((article, index) =>
           <div key={index}>
             <Article article={article} />
