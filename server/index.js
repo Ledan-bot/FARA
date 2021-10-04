@@ -124,6 +124,11 @@ app.post('/email', (req, res) => {
 
 app.get('/yahoo/news', redisCache, getYahooNews);
 
+app.get('/api/search/:ticker', (req, res) => {
+  console.log(req)
+  res.send('HIII')
+})
+
 // --------------------END OF ROUTES ---------------------------------
 
 // --------------------Start OF Configuration ------------------------

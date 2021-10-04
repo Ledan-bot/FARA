@@ -10,11 +10,13 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <section>
-          <SavedCompanies />
-        </section>
-        <section>
-          <TickerSearch />
+        <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
+          <section className="m-4 w-60 bg-indigo-800 border-2 border-solid border-indigo-800 border-opacity-70 rounded ">
+            <SavedCompanies />
+          </section>
+          <section className="flex flex-col items-center m-4 w-80 bg-indigo-800 border-2 border-solid border-indigo-800 border-opacity-70 rounded ">
+            <TickerSearch />
+          </section>
         </section>
       </main>
       <Footer />
