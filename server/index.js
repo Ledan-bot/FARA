@@ -51,10 +51,25 @@ function redisCache(req, res, next) {
   })
 }
 
-function redisKeyMetrics({params}, res, next) {
-  const {ticker} = params
+function redisKeyMetrics({query}, res, next) {
+  const {ticker} = query
 
   client.get(ticker, (err, data) => {
+    if (err) throw err;
+    if (data !== null) {
+      let parsed = JSON.parse(data)
+      res.send(parsed)
+    } else {
+      next();
+    }
+  })
+}
+
+function redisBalanceSheet({query}, res, next) {
+  const { ticker } = query
+  const str = ticker + 'BS'
+
+  client.get(str, (err, data) => {
     if (err) throw err;
     if (data !== null) {
       let parsed = JSON.parse(data)
@@ -91,8 +106,9 @@ async function getYahooNews(req, res, next) {
   }
 }
 
-async function getKeyMetrics({params}, res, next) {
-  const { ticker } = params
+async function getKeyMetrics({query}, res, next) {
+  const {ticker} = query
+  console.log('TICKER: ', ticker)
   try {
     let options = {
       method: 'GET',
@@ -108,6 +124,32 @@ async function getKeyMetrics({params}, res, next) {
     let dataString = JSON.stringify(data)
 
     client.setex(ticker, 86400, dataString)
+    res.send(data)
+  } catch (err) {
+    console.log(err)
+    res.sendStatus(500)
+  }
+}
+
+async function getBlanceSheet({query}, res, next) {
+  const { ticker } = query;
+  try {
+    let options = {
+      method: 'GET',
+      url: `https://quantel-io.p.rapidapi.com/balance-sheet-statement/${ticker}`,
+      params: { period: 'quarter' },
+      headers: {
+        'x-rapidapi-host': 'quantel-io.p.rapidapi.com',
+        'x-rapidapi-key': apiKey
+      }
+    };
+
+    const response = await axios.request(options)
+    const { data } = response
+    let dataString = JSON.stringify(data)
+
+    const str = ticker + 'BS'
+    client.setex(str, 86400, dataString)
     res.send(data)
   } catch (err) {
     console.log(err)
@@ -163,6 +205,8 @@ app.post('/email', (req, res) => {
 app.get('/yahoo/news', redisCache, getYahooNews);
 
 app.get('/api/search/:ticker/key-metrics', redisKeyMetrics, getKeyMetrics)
+
+app.get('/api/search/:ticker/balance-sheet', redisBalanceSheet, getBlanceSheet)
 
 // --------------------END OF ROUTES ---------------------------------
 
