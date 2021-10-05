@@ -50,6 +50,20 @@ function redisCache(req, res, next) {
     }
   })
 }
+
+function redisKeyMetrics({params}, res, next) {
+  const {ticker} = params
+
+  client.get(ticker, (err, data) => {
+    if (err) throw err;
+    if (data !== null) {
+      let parsed = JSON.parse(data)
+      res.send(parsed)
+    } else {
+      next();
+    }
+  })
+}
 // --------------------END OF MIDDLEWARE ---------------------------------
 
 // --------------------HELPER FUNCTIONS ----------------------------------
@@ -73,6 +87,30 @@ async function getYahooNews(req, res, next) {
     res.send(data)
   } catch (err) {
     console.error(err)
+    res.sendStatus(500)
+  }
+}
+
+async function getKeyMetrics({params}, res, next) {
+  const { ticker } = params
+  try {
+    let options = {
+      method: 'GET',
+      url: `https://quantel-io.p.rapidapi.com/key-metrics/${ticker}`,
+      params: {period: 'quarter'},
+      headers: {
+        'x-rapidapi-host': 'quantel-io.p.rapidapi.com',
+        'x-rapidapi-key': apiKey
+      }
+    };
+    const response = await axios.request(options)
+    const { data } = response
+    let dataString = JSON.stringify(data)
+
+    client.setex(ticker, 86400, dataString)
+    res.send(data)
+  } catch (err) {
+    console.log(err)
     res.sendStatus(500)
   }
 }
@@ -124,11 +162,7 @@ app.post('/email', (req, res) => {
 
 app.get('/yahoo/news', redisCache, getYahooNews);
 
-app.get('/api/search/:ticker', ({ query }, res) => {
-  const { ticker } = query
-  console.log(ticker)
-  res.send('HIII')
-})
+app.get('/api/search/:ticker/key-metrics', redisKeyMetrics, getKeyMetrics)
 
 // --------------------END OF ROUTES ---------------------------------
 
