@@ -124,8 +124,9 @@ app.post('/email', (req, res) => {
 
 app.get('/yahoo/news', redisCache, getYahooNews);
 
-app.get('/api/search/:ticker', (req, res) => {
-  console.log(req)
+app.get('/api/search/:ticker', ({ query }, res) => {
+  const { ticker } = query
+  console.log(ticker)
   res.send('HIII')
 })
 
