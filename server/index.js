@@ -79,6 +79,21 @@ function redisBalanceSheet({query}, res, next) {
     }
   })
 }
+
+function redisGeneralInfo({query}, res, next) {
+  const { ticker } = query
+  const str = ticker + 'GI'
+
+  client.get(str, (err, data) => {
+    if (err) throw err;
+    if (data !== null) {
+      let parsed = JSON.parse(data)
+      res.send(parsed)
+    } else {
+      next();
+    }
+  })
+}
 // --------------------END OF MIDDLEWARE ---------------------------------
 
 // --------------------HELPER FUNCTIONS ----------------------------------
@@ -156,6 +171,30 @@ async function getBlanceSheet({query}, res, next) {
     res.sendStatus(500)
   }
 }
+
+async function getGeneralInfo({query}, res, next) {
+  const { ticker } = query;
+  try {
+    let options = {
+      method: 'GET',
+      url: `https://quantel-io.p.rapidapi.com/profile/${ticker}`,
+      headers: {
+        'x-rapidapi-host': 'quantel-io.p.rapidapi.com',
+        'x-rapidapi-key': apiKey
+      }
+    };
+    const response = await axios.request(options)
+    const { data } = response
+    let dataString = JSON.stringify(data)
+
+    const str = ticker + 'GI'
+    client.setex(str, 86400, dataString)
+    res.send(data)
+  } catch (err) {
+    console.log(err)
+    res.sendStatus(500)
+  }
+}
 // --------------------START OF ROUTES -----------------------------------
 app.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
@@ -207,6 +246,8 @@ app.get('/yahoo/news', redisCache, getYahooNews);
 app.get('/api/search/:ticker/key-metrics', redisKeyMetrics, getKeyMetrics)
 
 app.get('/api/search/:ticker/balance-sheet', redisBalanceSheet, getBlanceSheet)
+
+app.get('/api/search/:ticker/general-info', getGeneralInfo)
 
 // --------------------END OF ROUTES ---------------------------------
 

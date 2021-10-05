@@ -3,6 +3,7 @@ import Footer from '../Shared/Footer.jsx';
 import Header from '../Shared/Header.jsx';
 import KeyMetrics from './KeyMetrics.jsx';
 import BalanceSheet from './BalanceSheet.jsx';
+import GeneralInfo from './General.jsx';
 
 
 export default function ResultPage() {
@@ -11,6 +12,7 @@ export default function ResultPage() {
       <Header />
       <main>
         <section>
+          <GeneralInfo />
           <BalanceSheet />
           <KeyMetrics />
         </section>
