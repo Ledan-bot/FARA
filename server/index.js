@@ -247,7 +247,7 @@ app.get('/api/search/:ticker/key-metrics', redisKeyMetrics, getKeyMetrics)
 
 app.get('/api/search/:ticker/balance-sheet', redisBalanceSheet, getBlanceSheet)
 
-app.get('/api/search/:ticker/general-info', getGeneralInfo)
+app.get('/api/search/:ticker/general-info', redisGeneralInfo, getGeneralInfo)
 
 // --------------------END OF ROUTES ---------------------------------
 

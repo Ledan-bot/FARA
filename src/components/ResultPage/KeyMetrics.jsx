@@ -31,20 +31,20 @@ export default function KeyMetrics() {
     )
   } else {
     return (
-      <section >
-        <h3 className="key-metrics-title">Key Metrics</h3>
-        <p>Revenue Per Share: ${formatter.format(recentMetrics.revenuePerShare)}</p>
-        <p>Net Income Per Share: ${formatter.format(recentMetrics.netIncomePerShare)}</p>
-        <p>Operating Cash Flow Per Share: ${formatter.format(recentMetrics.operatingCashFlowPerShare)}</p>
-        <p>Cash Per Share: ${formatter.format(recentMetrics.cashPerShare)}</p>
-        <p>Tangible Book Value Per Share ${formatter.format(recentMetrics.tangibleBookValuePerShare)}</p>
-        <p>Price to Earnings Ratio: ${formatter.format(recentMetrics.peRatio)}</p>
-        <p>Price to Book Ratio: ${formatter.format(recentMetrics.pbRatio)}</p>
-        <p>Price to Sales Ratio: ${formatter.format(recentMetrics.priceToSalesRatio)}</p>
-        <p>Enterprise Value to Sales Ratio: ${formatter.format(recentMetrics.evToSales)}</p>
-        <p>Market Cap: ${formatter.format(recentMetrics.marketCap)}</p>
-        <p>Debt to Equity Ratio: {formatter.format(recentMetrics.debtToEquity)}</p>
-        <p>Debt to Assets Ratio: {formatter.format(recentMetrics.debtToAssets)}</p>
+      <section className="m-4 w-60 bg-indigo-800 border-2 border-solid border-indigo-800 border-opacity-70 rounded">
+        <h3 className="text-gray-300">Key Metrics</h3>
+        <p className="text-gray-300">Revenue Per Share: ${formatter.format(recentMetrics.revenuePerShare)}</p>
+        <p className="text-gray-300">Net Income Per Share: ${formatter.format(recentMetrics.netIncomePerShare)}</p>
+        <p className="text-gray-300">Operating Cash Flow Per Share: ${formatter.format(recentMetrics.operatingCashFlowPerShare)}</p>
+        <p className="text-gray-300">Cash Per Share: ${formatter.format(recentMetrics.cashPerShare)}</p>
+        <p className="text-gray-300">Tangible Book Value Per Share ${formatter.format(recentMetrics.tangibleBookValuePerShare)}</p>
+        <p className="text-gray-300">Price to Earnings Ratio: ${formatter.format(recentMetrics.peRatio)}</p>
+        <p className="text-gray-300">Price to Book Ratio: ${formatter.format(recentMetrics.pbRatio)}</p>
+        <p className="text-gray-300">Price to Sales Ratio: ${formatter.format(recentMetrics.priceToSalesRatio)}</p>
+        <p className="text-gray-300">Enterprise Value to Sales Ratio: ${formatter.format(recentMetrics.evToSales)}</p>
+        <p className="text-gray-300">Market Cap: ${formatter.format(recentMetrics.marketCap)}</p>
+        <p className="text-gray-300">Debt to Equity Ratio: {formatter.format(recentMetrics.debtToEquity)}</p>
+        <p className="text-gray-300">Debt to Assets Ratio: {formatter.format(recentMetrics.debtToAssets)}</p>
       </section>
     )
   }

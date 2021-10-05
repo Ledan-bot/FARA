@@ -11,7 +11,7 @@ export default function ResultPage() {
     <>
       <Header />
       <main>
-        <section>
+        <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
           <GeneralInfo />
           <BalanceSheet />
           <KeyMetrics />
