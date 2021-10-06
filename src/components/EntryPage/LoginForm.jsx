@@ -22,7 +22,7 @@ export default function LoginForm() {
     .then(({data}) => {
       console.log('Data:', data)
       if (data === 'Successfully Authenticated') {
-        history.push('/home')
+        history.push('/search')
       } else {
         alert(data)
       }
