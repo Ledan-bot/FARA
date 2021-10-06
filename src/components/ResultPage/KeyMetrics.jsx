@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { VscLoading } from 'react-icons/vsc';
 
-export default function KeyMetrics() {
+export default function KeyMetrics({ticker}) {
   let [metrics, updateMetrics] = useState('')
-  let [ticker, updateTicker] = useState('MU')
+  // let [ticker, updateTicker] = useState('MU')
   let recentMetrics = metrics[0]
 
   const formatter = new Intl.NumberFormat('en-US', {

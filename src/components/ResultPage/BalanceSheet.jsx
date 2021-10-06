@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { VscLoading } from 'react-icons/vsc';
 
-export default function BalanceSheet() {
+export default function BalanceSheet({ticker}) {
   let [balanceSheet, updateBalanceSheet] = useState('')
-  let [ticker, updateTicker] = useState('MU')
+  // let [ticker, updateTicker] = useState('MU')
   let recentBalanceSheet = balanceSheet[0]
 
   const formatter = new Intl.NumberFormat('en-US', {

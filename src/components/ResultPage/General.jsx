@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { VscLoading } from 'react-icons/vsc';
 
-export default function General() {
+export default function General({ticker}) {
   let [generalInfo, updateGeneralInfo] = useState('')
-  let [ticker, updateTicker] = useState('MU')
+  // let [ticker, updateTicker] = useState('MU')
   let company = generalInfo[0]
 
   const formatter = new Intl.NumberFormat('en-US', {

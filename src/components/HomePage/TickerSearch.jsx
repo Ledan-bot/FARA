@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import Axios from 'axios'
 
 export default function TickerSearch() {
   let [input, updateInput] = useState('');
 
+  let history = useHistory();
+
   const searchTicker = (e) => {
     e.preventDefault();
-    Axios.get('/api/search/:ticker', { params: {ticker: input}})
-
+    history.push(`/result/${input}`)
 
   }
 

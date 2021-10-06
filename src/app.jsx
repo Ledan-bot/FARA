@@ -16,10 +16,10 @@ export default function App() {
           <Route exact path="/">
             <EntryPage />
           </Route>
-          <Route path="/search">
+          <Route exact path="/search">
             <HomePage />
           </Route>
-          <Route path="/result">
+          <Route path="/result/:ticker">
             <ResultPage />
           </Route>
         </Switch>
