@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 export default function LoginForm() {
   const [loginUsername, updateLoginUsername] = useState('');
   const [loginPassword, updateLoginPassword] = useState('');
+
+  let history = useHistory();
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -16,9 +19,10 @@ export default function LoginForm() {
       withCredentials: true,
       url: 'http://localhost:8666/login'
     })
-    .then(({ data }) => {
+    .then(({data}) => {
+      console.log('Data:', data)
       if (data === 'Successfully Authenticated') {
-        updateCurrentPage('Homepage')
+        history.push('/home')
       } else {
         alert(data)
       }
