@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server/index.js",
-    "react-dev": "webpack -w",
+    "build": "webpack build",
+    "react-dev": "webpack watch",
     "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
   },
   "repository": {
