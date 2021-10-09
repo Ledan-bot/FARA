@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 export default function Header() {
   return (
     <>
-      <header className="h-26 lg:h-24 flex flex-col items-center bg-daWhite">
+      <header className="h-26 h-24 flex flex-col items-center bg-daWhite">
         <div className="h-1/2 w-full flex">
           <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-daBlue to-daGreen">DEEPANALYSIS</h2>
           <IconContext.Provider value={{color: '#3e6b89', size: '40px'}}>
@@ -13,7 +13,7 @@ export default function Header() {
           </IconContext.Provider>
         </div>
         <div className="h-1/2 w-full flex flex-col place-content-center bg-daBlue">
-          <nav className="flex justify-end space-x-5 pr-4 items-center">
+          <nav className="flex justify-end space-x-10 pr-10 items-center">
             <a className="text-daWhite">About</a>
             <a className="text-daWhite">Services</a>
             <a className="text-daWhite">Contact</a>
