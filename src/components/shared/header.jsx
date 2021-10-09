@@ -1,19 +1,24 @@
 import React from 'react'
-import { AiOutlineBars } from 'react-icons/ai'
+import { AiOutlineStock } from 'react-icons/ai'
 import { IconContext } from 'react-icons';
 
 export default function Header() {
   return (
     <>
-      <header className="h-14 flex flex-wrap items-center bg-daBlue">
-        <div className="flex-1 pl-5">
-          <h2 className="text-gray-300">Research Assistant</h2>
+      <header className="h-26 lg:h-24 flex flex-col items-center bg-daWhite">
+        <div className="h-1/2 w-full flex">
+          <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-daBlue to-daGreen">DEEPANALYSIS</h2>
+          <IconContext.Provider value={{color: '#3e6b89', size: '40px'}}>
+            <AiOutlineStock />
+          </IconContext.Provider>
         </div>
-        <IconContext.Provider value={{ size: "40px", color: '#D1D5DB' }}>
-          <div className="flex-initial justify-end pr-1">
-            <AiOutlineBars />
-          </div>
-        </IconContext.Provider>
+        <div className="h-1/2 w-full flex flex-col place-content-center bg-daBlue">
+          <nav className="flex justify-end space-x-5 pr-4 items-center">
+            <a className="text-daWhite">About</a>
+            <a className="text-daWhite">Services</a>
+            <a className="text-daWhite">Contact</a>
+          </nav>
+        </div>
       </header>
     </>
   )
