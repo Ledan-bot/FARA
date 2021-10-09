@@ -14,9 +14,9 @@ export default function Header() {
         </div>
         <div className="h-1/2 w-full flex flex-col place-content-center bg-daBlue">
           <nav className="flex justify-end space-x-10 pr-10 items-center">
-            <a className="text-daWhite">About</a>
-            <a className="text-daWhite">Services</a>
-            <a className="text-daWhite">Contact</a>
+            <a className="text-gray-300">About</a>
+            <a className="text-gray-300">Services</a>
+            <a className="text-gray-300">Contact</a>
           </nav>
         </div>
       </header>

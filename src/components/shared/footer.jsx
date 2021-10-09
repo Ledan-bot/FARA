@@ -6,7 +6,7 @@ import { IconContext } from 'react-icons';
 export default function Footer() {
   return (
     <>
-      <footer className="h-14 flex flex-wrap items-center bg-indigo-800 ">
+      <footer className="h-14 flex flex-wrap items-center bg-daBlue ">
         <div className="flex-1 ">
           <h2 className="text-gray-300">Contact me via Socials:</h2>
         </div>
