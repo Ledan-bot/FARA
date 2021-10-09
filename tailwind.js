@@ -40,6 +40,11 @@ module.exports = {
         fuchsia: colors.fuchsia,
         pink: colors.pink,
         rose: colors.rose,
+        daWhite: '#fcfcfc',
+        daBlue: '#3e6b89',
+        daBlueGreen: '#45828a',
+        daGreenBlue: '#4c998b',
+        daGreen: '#53b18c'
       }
     },
     spacing: {
