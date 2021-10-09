@@ -28,19 +28,19 @@ export default function CreateAccount() {
 
   return (
     <>
-      <form className="flex flex-col items-center w-full" onSubmit={registerUser}>
-        <p className="text-gray-300">New Username:</p>
+      <form className="flex flex-col space-y-4 items-center w-full" onSubmit={registerUser}>
+        <p className="text-daGreenBlue">New Username:</p>
         <input type='text' onChange={e => updateUsername(e.target.value)} className="w-11/12"/>
-        <p className="text-gray-300">New Password:</p>
+        <p className="text-daGreenBlue">New Password:</p>
         <input type="text" onChange={e => updatePassword(e.target.value)} className="w-11/12"/>
-        <p className="text-gray-300">First Name:</p>
+        <p className="text-daGreenBlue">First Name:</p>
         <input type="text" onChange={e => updateFirstName(e.target.value)} className="w-11/12"/>
-        <p className="text-gray-300">Last Name:</p>
+        <p className="text-daGreenBlue">Last Name:</p>
         <input type="text" onChange={e => updateLastName(e.target.value)} className="w-11/12"/>
-        <p className="text-gray-300">Email:</p>
+        <p className="text-daGreenBlue">Email:</p>
         <input type="text" onChange={e => updateEmail(e.target.value)} className="w-11/12"/>
         <br></br>
-        <button type="submit" className="rounded-full py-3 px-6 bg-gray-300 hover:bg-purple-700 text-gray-900">Create Account</button>
+        <button type="submit" className="rounded-full py-3 px-6 bg-daGreen hover:bg-daBlue text-gray-800">Sign Up</button>
       </form>
     </>
   )

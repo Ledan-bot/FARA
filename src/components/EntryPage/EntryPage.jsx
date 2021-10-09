@@ -13,8 +13,8 @@ export default function EntryPage() {
         <section id="Login" className="filter drop-shadow-lg shadow-lg m-4 h-3/5 w-1/3 border-2 border-solid border-daBlueGreen rounded ">
           <LoginForm />
         </section>
-        <section id="Create-Account" className="shadow-lg m-4 h-3/5 w-1/3 flex flex-col items-center border-daBlueGreen border-2 border-solid">
-          <h2 className="flex-1 text-gray-300">Create A New Account</h2>
+        <section id="Create-Account" className="filter drop-shadow-lg shadow-lg m-4 h-3/5 w-1/3 flex flex-col items-center border-daBlueGreen border-2 border-solid">
+          <h2 className="text-4xl text-daBlueGreen">Create Account</h2>
           <CreateAccount />
         </section>
       </main>
