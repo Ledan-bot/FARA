@@ -32,28 +32,28 @@ export default function General({ ticker }) {
     )
   } else {
     return (
-      <section className="flex flex-row divide-x-2 divide-dotted divide-daGreen">
-        <section id="gen-info">
-          <h2>{company.companyName}</h2>
-          <ul>
-            <li>CEO: {company.ceo}</li>
-            <li>Symbol: {company.symbol}</li>
-            <li>Industry: {company.industry}</li>
-            <li>Sector: {company.sector}</li>
-            <li>Exchange: {company.exchange}</li>
-            <li>Website: {company.website}</li>
+      <section className="flex flex-row divide-x-4 divide-solid divide-daGreen py-5">
+        <section id="gen-info" className="flex flex-col justify-center items-center place-content-around w-1/4 space-y-5">
+          <h2 className="text-3xl">{company.companyName}</h2>
+          <ul className="felx flex-col justify-center items-center place-content-around space-y-6">
+            <li className="text-gray-800">CEO: {company.ceo}</li>
+            <li className="text-gray-800">Symbol: {company.symbol}</li>
+            <li className="text-gray-800">Industry: {company.industry}</li>
+            <li className="text-gray-800">Sector: {company.sector}</li>
+            <li className="text-gray-800">Exchange: {company.exchange}</li>
+            <li className="text-gray-800">Website: {company.website}</li>
           </ul>
         </section>
-        <section id="description">
-          <p>{company.description}</p>
+        <section id="description" className="w-2/4 px-5">
+          <p className="text-gray-800">{company.description}</p>
         </section>
-        <section id="gen-data">
-          <ul>
-            <li>Price: {company.price}</li>
-            <li>Beta: {company.beta} </li>
-            <li>Last Closing Price: ${formatter.format(company.price)}</li>
-            <li>Range: {company.range}</li>
-            <li>Volume: {company.volume}</li>
+        <section id="gen-data" className="flex flex-col justify-center items-center w-1/4">
+          <ul className="felx flex-col justify-center items-center place-content-around space-y-6">
+            <li className="text-gray-800">Price: {company.price}</li>
+            <li className="text-gray-800">Beta: {company.beta} </li>
+            <li className="text-gray-800">Last Closing Price: ${formatter.format(company.price)}</li>
+            <li className="text-gray-800">Range: {company.range}</li>
+            <li className="text-gray-800">Volume: {company.volAvg}</li>
           </ul>
         </section>
       </section>

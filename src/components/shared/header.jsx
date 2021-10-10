@@ -12,11 +12,11 @@ export default function Header() {
             <AiOutlineStock />
           </IconContext.Provider>
         </div>
-        <div className="h-1/2 w-full flex flex-col place-content-center bg-daBlue">
+        <div className="h-1/2 w-full flex flex-col place-content-center bg-daGreen">
           <nav className="flex justify-end space-x-10 pr-10 items-center">
-            <a className="text-gray-300">About</a>
-            <a className="text-gray-300">Services</a>
-            <a className="text-gray-300">Contact</a>
+            <a className="text-Black">About</a>
+            <a className="text-Black">Services</a>
+            <a className="text-Black">Contact</a>
           </nav>
         </div>
       </header>
