@@ -14,7 +14,7 @@ export default function ResultPage() {
     <>
       <Header />
       <main>
-        <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
+        <section className="flex flex-wrap justify-around bg-daWhite">
           <GeneralInfo ticker={ticker}/>
           <BalanceSheet ticker={ticker}/>
           <KeyMetrics ticker={ticker}/>
