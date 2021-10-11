@@ -40,7 +40,7 @@ export default function KeyMetrics({ticker}) {
       labels: ['Revenue Per Share', 'Net Income Per Share', 'Cash Per Share', 'Price to Earnings Ratio', 'Price to Book Ratio', 'Price to Sales Ratio', 'Enterprise Value to Sales ratio'],
       datasets: [
         {
-          label: '# of Votes',
+          label: 'Metrics',
           data: [recentMetrics.revenuePerShare, recentMetrics.netIncomePerShare, recentMetrics.cashPerShare, recentMetrics.peRatio, recentMetrics.pbRatio, recentMetrics.priceToSalesRatio, recentMetrics.evToSales],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
