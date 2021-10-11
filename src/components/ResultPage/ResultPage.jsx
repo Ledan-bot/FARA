@@ -14,10 +14,10 @@ export default function ResultPage() {
     <>
       <Header />
       <main>
-        <section className="flex flex-wrap justify-around bg-daWhite">
+        <section className="flex flex-col justify-around bg-daWhite divide-y-4 divide-dashed divide-daGreen">
           <GeneralInfo ticker={ticker}/>
-          <BalanceSheet ticker={ticker}/>
           <KeyMetrics ticker={ticker}/>
+          <BalanceSheet ticker={ticker}/>
         </section>
       </main>
       <Footer />
