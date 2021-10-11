@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { VscLoading } from 'react-icons/vsc';
+import { Bar } from 'react-chartjs-2'
 
 export default function KeyMetrics({ticker}) {
   let [metrics, updateMetrics] = useState('')
@@ -23,6 +24,11 @@ export default function KeyMetrics({ticker}) {
       })
   }, [])
 
+  // let data = {
+  //   labels: [], // NEED TO FILL!
+  // }
+
+
   if (!metrics) {
     return (
       <>
@@ -30,9 +36,47 @@ export default function KeyMetrics({ticker}) {
       </>
     )
   } else {
+    const data = {
+      labels: ['Revenue Per Share', 'Net Income Per Share', 'Cash Per Share', 'Price to Earnings Ratio', 'Price to Book Ratio', 'Price to Sales Ratio', 'Enterprise Value to Sales ratio'],
+      datasets: [
+        {
+          label: '# of Votes',
+          data: [recentMetrics.revenuePerShare, recentMetrics.netIncomePerShare, recentMetrics.cashPerShare, recentMetrics.peRatio, recentMetrics.pbRatio, recentMetrics.priceToSalesRatio, recentMetrics.evToSales],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    };
+
+    const options = {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    };
     return (
-      <section className="m-4 flex flex-row py-5">
-        <section className="w-1/4 flex flex-col justify-center items-center place-content-around space-y-5 ">
+      <section className="m-4 flex flex-row py-5 filter drop-shadow-lg shadow-lg">
+        <section className="filter drop-shadow-lg shadow-lg w-1/4 flex flex-col justify-center items-center place-content-around space-y-5 ">
           <h1 className="text-3xl">Key Metrics</h1>
           <ul className="flex flex-col justify-center items-center place-content-around space-y-6">
             <li>Revenue Per Share: ${formatter.format(recentMetrics.revenuePerShare)}</li>
@@ -49,22 +93,9 @@ export default function KeyMetrics({ticker}) {
           </ul>
         </section>
         <section className="w-3/4">
-
+          <Bar data={data} options={options} />
         </section>
       </section>
     )
   }
 }
-{/* <h3 className="text-gray-300">Key Metrics</h3>
-<p className="text-gray-300">Revenue Per Share: ${formatter.format(recentMetrics.revenuePerShare)}</p>
-<p className="text-gray-300">Net Income Per Share: ${formatter.format(recentMetrics.netIncomePerShare)}</p>
-<p className="text-gray-300">Operating Cash Flow Per Share: ${formatter.format(recentMetrics.operatingCashFlowPerShare)}</p>
-<p className="text-gray-300">Cash Per Share: ${formatter.format(recentMetrics.cashPerShare)}</p>
-<p className="text-gray-300">Tangible Book Value Per Share ${formatter.format(recentMetrics.tangibleBookValuePerShare)}</p>
-<p className="text-gray-300">Price to Earnings Ratio: ${formatter.format(recentMetrics.peRatio)}</p>
-<p className="text-gray-300">Price to Book Ratio: ${formatter.format(recentMetrics.pbRatio)}</p>
-<p className="text-gray-300">Price to Sales Ratio: ${formatter.format(recentMetrics.priceToSalesRatio)}</p>
-<p className="text-gray-300">Enterprise Value to Sales Ratio: ${formatter.format(recentMetrics.evToSales)}</p>
-<p className="text-gray-300">Market Cap: ${formatter.format(recentMetrics.marketCap)}</p>
-<p className="text-gray-300">Debt to Equity Ratio: {formatter.format(recentMetrics.debtToEquity)}</p>
-<p className="text-gray-300">Debt to Assets Ratio: {formatter.format(recentMetrics.debtToAssets)}</p> */}
