@@ -249,6 +249,10 @@ app.get('/api/search/:ticker/balance-sheet', redisBalanceSheet, getBlanceSheet)
 
 app.get('/api/search/:ticker/general-info', redisGeneralInfo, getGeneralInfo)
 
+app.get('*', (req, res) => {
+  res.sendStatus(404)
+})
+
 // --------------------END OF ROUTES ---------------------------------
 
 // --------------------Start OF Configuration ------------------------
