@@ -5,7 +5,6 @@ import { Bar } from 'react-chartjs-2'
 
 export default function KeyMetrics({ticker}) {
   let [metrics, updateMetrics] = useState('')
-  // let [ticker, updateTicker] = useState('MU')
   let recentMetrics = metrics[0]
 
   const formatter = new Intl.NumberFormat('en-US', {
@@ -23,10 +22,6 @@ export default function KeyMetrics({ticker}) {
         alert(err)
       })
   }, [])
-
-  // let data = {
-  //   labels: [], // NEED TO FILL!
-  // }
 
 
   if (!metrics) {
@@ -63,6 +58,7 @@ export default function KeyMetrics({ticker}) {
           },
         ],
       },
+      maintainAspectRatio: false
     };
     return (
       <section className="m-4 flex flex-row py-5 filter drop-shadow-lg shadow-lg">
@@ -83,7 +79,7 @@ export default function KeyMetrics({ticker}) {
           </ul>
         </section>
         <section className="w-3/4">
-          <Bar data={data} options={options} />
+          <Bar data={data} options={options} height={600}/>
         </section>
       </section>
     )
