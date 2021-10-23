@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Shared/Header.jsx';
 import Footer from './components/Shared/Footer.jsx';
 import EntryPage from './components/EntryPage/EntryPage.jsx';

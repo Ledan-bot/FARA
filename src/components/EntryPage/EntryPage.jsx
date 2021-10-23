@@ -9,18 +9,13 @@ export default function EntryPage() {
   return (
     <>
       <Header />
-      <main >
-        <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
-          <section id="Login" className="m-4 w-60 bg-indigo-800 border-2 border-solid border-indigo-800 border-opacity-70 rounded ">
-            <LoginForm />
-          </section>
-          <section id="Create-Account" className="flex flex-col items-center m-4 w-80 bg-indigo-800 border-2 border-solid border-indigo-800 border-opacity-70 rounded ">
-            <h2 className="flex-1 text-gray-300">Create A New Account</h2>
-            <CreateAccount />
-          </section>
+      <main className="h-screen flex space-x-16 place-items-center place-content-center bg-daWhite">
+        <section id="Login" className="filter drop-shadow-lg shadow-lg m-4 h-3/5 w-1/3 border-2 border-solid border-daBlueGreen rounded ">
+          <LoginForm />
         </section>
-        <section className="flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
-          <YahooNews />
+        <section id="Create-Account" className="filter drop-shadow-lg shadow-lg m-4 h-3/5 w-1/3 flex flex-col items-center border-daBlueGreen border-2 border-solid">
+          <h2 className="text-4xl text-daBlueGreen">Create Account</h2>
+          <CreateAccount />
         </section>
       </main>
       <Footer />

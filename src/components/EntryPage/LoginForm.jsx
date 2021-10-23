@@ -32,13 +32,14 @@ export default function LoginForm() {
 
   return (
     <>
-      <form onSubmit={loginUser} className="flex flex-col items-center">
-        <p className="text-gray-300">Username</p>
-        <input type="text" placeholder="Username" onChange={e => updateLoginUsername(e.target.value)}  className="w-11/12"/>
-        <p className="text-gray-300">Password</p>
-        <input type='password' placeholder="Password" onChange={e => updateLoginPassword(e.target.value)} className="w-11/12" />
+      <form onSubmit={loginUser} className="flex flex-col items-center space-y-10">
+        <h2 className="text-4xl text-daBlueGreen">Login</h2>
+        <p className="text-daGreenBlue">Username</p>
+        <input type="text"  onChange={e => updateLoginUsername(e.target.value)}  className="h-16 w-11/12"/>
+        <p className="text-daGreenBlue">Password</p>
+        <input type="password"  onChange={e => updateLoginPassword(e.target.value)} className="h-16 w-11/12" />
         <br/>
-        <button className="rounded-full py-3 px-6 bg-gray-300 hover:bg-purple-700 text-gray-800">Login</button>
+        <button className="rounded-full py-3 px-6 bg-daGreen hover:bg-daBlue text-gray-800">Sign in</button>
       </form>
     </>
   )
