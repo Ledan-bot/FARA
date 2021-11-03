@@ -14,7 +14,7 @@ export default function Header() {
         </div>
         <div className="h-1/2 w-full flex flex-col place-content-center bg-daGreen">
           <nav className="flex justify-end space-x-10 pr-10 items-center">
-            <a href="/about" className="text-Black">About</a>
+            <a href="/#/about" className="text-Black">About</a>
             <a className="text-Black">Services</a>
             <a className="text-Black">Contact</a>
           </nav>
