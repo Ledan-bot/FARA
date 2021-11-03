@@ -12,6 +12,7 @@ const session = require('express-session');
 const database = require('../database/index.js');
 const { User } = database.models
 const { apiKey } = require('../env/config.js')
+const {redisCache, redisBalanceSheet, redisGeneralInfo, redisKeyMetrics} = require('./caches.js')
 // --------------------END OF IMPORTS ---------------------------------
 
 const PORT = process.env.PORT || 8666;
@@ -37,63 +38,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./passportConfig')(passport)
 
-function redisCache(req, res, next) {
-  const url = 'https://mboum-finance.p.rapidapi.com/ne/news'
-
-  client.get(url, (err, data) => {
-    if (err) throw err;
-    if (data !== null) {
-      let parsed = JSON.parse(data)
-      res.send(parsed)
-    } else {
-      next();
-    }
-  })
-}
-
-function redisKeyMetrics({query}, res, next) {
-  const {ticker} = query
-
-  client.get(ticker, (err, data) => {
-    if (err) throw err;
-    if (data !== null) {
-      let parsed = JSON.parse(data)
-      res.send(parsed)
-    } else {
-      next();
-    }
-  })
-}
-
-function redisBalanceSheet({query}, res, next) {
-  const { ticker } = query
-  const str = ticker + 'BS'
-
-  client.get(str, (err, data) => {
-    if (err) throw err;
-    if (data !== null) {
-      let parsed = JSON.parse(data)
-      res.send(parsed)
-    } else {
-      next();
-    }
-  })
-}
-
-function redisGeneralInfo({query}, res, next) {
-  const { ticker } = query
-  const str = ticker + 'GI'
-
-  client.get(str, (err, data) => {
-    if (err) throw err;
-    if (data !== null) {
-      let parsed = JSON.parse(data)
-      res.send(parsed)
-    } else {
-      next();
-    }
-  })
-}
 // --------------------END OF MIDDLEWARE ---------------------------------
 
 // --------------------HELPER FUNCTIONS ----------------------------------
