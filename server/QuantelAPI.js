@@ -2,7 +2,7 @@ const axios = require('axios').default;
 const redis = require('redis');
 const REDISPORT = process.env.PORT || 6379
 const client = redis.createClient(REDISPORT);
-
+const { apiKey } = require('../env/config.js')
 
 async function getYahooNews(req, res, next) {
   try {
