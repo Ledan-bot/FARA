@@ -11,14 +11,14 @@ export default function Footer() {
           <h2>Contact me via Socials:</h2>
         </div>
         <IconContext.Provider value={{ size: "40px", color: '#000000' }}>
-          <div className="flex-initial justify-end pr-1">
+          <a href="https://www.linkedin.com/in/nicholas-ledan-a1b542209/" className="flex-initial justify-end pr-1">
             <FaLinkedin />
-          </div>
+          </a>
         </IconContext.Provider>
         <IconContext.Provider value={{ size: "40px", color: '#000000' }}>
-          <div className="flex-initial justify-end pr-1">
+          <a href="https://github.com/Ledan-bot" className="flex-initial justify-end pr-1">
             <FaGithub />
-          </div>
+          </a>
         </IconContext.Provider>
       </footer>
     </>

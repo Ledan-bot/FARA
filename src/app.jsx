@@ -5,6 +5,7 @@ import Footer from './components/Shared/Footer.jsx';
 import EntryPage from './components/EntryPage/EntryPage.jsx';
 import HomePage from './components/HomePage/HomePage.jsx';
 import ResultPage from './components/ResultPage/ResultPage.jsx';
+import AboutPage from './components/AboutPage/AboutPage.jsx';
 
 
 export default function App() {
@@ -18,6 +19,9 @@ export default function App() {
           </Route>
           <Route exact path="/search">
             <HomePage />
+          </Route>
+          <Route exact path="/about">
+            <AboutPage />
           </Route>
           <Route path="/result/:ticker">
             <ResultPage />
