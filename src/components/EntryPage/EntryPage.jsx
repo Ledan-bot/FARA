@@ -3,7 +3,6 @@ import Header from '../shared/Header.jsx';
 import Footer from '../shared/Footer.jsx';
 import LoginForm from './LoginForm.jsx';
 import CreateAccount from './CreateAccount.jsx';
-import YahooNews from './YahooNews.jsx';
 
 export default function EntryPage() {
   return (
