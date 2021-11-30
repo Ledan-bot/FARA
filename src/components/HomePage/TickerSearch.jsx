@@ -14,11 +14,10 @@ export default function TickerSearch() {
   }
 
   return (
-    <form onSubmit={searchTicker}>
-      <p>Stock Ticker:</p>
-      <input type="text" size='15' maxLength="30" onChange={e => updateInput(e.target.value)} />
-      <br />
-      <button type="Submit">Search</button>
+    <form onSubmit={searchTicker} className=" w-full flex flex-col items-center">
+      <p className="text-daBlue text-4xl my-8">Stock Ticker:</p>
+      <input type="text" size='15' maxLength="30" onChange={e => updateInput(e.target.value)} className="w-3/5 my-4"/>
+      <button type="Submit" className="bg-daGreen rounded-full py-3 px-6">Search</button>
     </form>
   )
 }
