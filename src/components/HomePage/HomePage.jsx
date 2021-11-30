@@ -11,7 +11,7 @@ export default function HomePage() {
       <Header />
       <main>
         <section className="h-screen flex flex-wrap justify-around bg-gradient-to-r from-white via to-gray-400">
-          <section className="h-auto m-4 w-80 border-2 border-solid border-daBlueGreen border-opacity-70 rounded">
+          <section >
             <SavedCompanies />
           </section>
           <section className="h-1/4 flex flex-col items-center m-4 w-80 border-2 border-solid border-daBlueGreen border-opacity-70 rounded ">
